@@ -1,4 +1,4 @@
-FROM ubuntu/apache2
+FROM nginx
 MAINTAINER Abhishek sharma
-WORKDIR /var/www/html/
+WORKDIR /usr/share/nginx/html/
 COPY ./project_1 .
