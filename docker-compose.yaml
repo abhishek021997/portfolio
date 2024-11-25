@@ -9,7 +9,6 @@ services:
     build: .
     ports:
       - 30020:80
-      - 30021:8080
     volumes:
       -  portfolio:/var/www/html/project_1
       
