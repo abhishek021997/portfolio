@@ -10,7 +10,7 @@ services:
     ports:
       - 30020:80
     volumes:
-      -  portfolio:/var/www/html/project_1
+      -  portfolio:/var/www/html/
       
 ########### container dependent container to Database ################
 #    depends_on:
