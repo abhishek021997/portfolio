@@ -1,5 +1,5 @@
-#usr/bin
-#usr/sbin
+#!usr/bin
+#!usr/sbin
 
 # Created By: Abhishek Sharma
 # Massage: This is Portfolio Webpage Executing using NGINX 
