@@ -6,7 +6,7 @@
 
 con_name="portfolio"
 domain_name="byteportfolio.in"
-
+static_ip="192.168.1.115" # Please Provide your Static IP address
 
 ##################### Docker Compose file run ######################
 docker compose up -d
@@ -22,7 +22,13 @@ docker compose up -d
   # If not getting any error so SSL is working properly
   # NOW you run your the command "curl https://byteportfolio.in" (IF this command show us our HTML page that's mean all configuration is working properly)
  ########################
+
+ ####################### Host Entry ##################################
+ # uncomment this billow line after Provide Static IP in Variable (line 9)
  
+ #      sudo echo "$static_ip    $domain_name" >> /etc/hosts
+
+ #####################################################################
  
  
  
