@@ -8,12 +8,13 @@ services:
   portfolio:
     build: .
     ports:
-      - 30020:80
+      - 80:80
+      - 443:443
     volumes:
-      -  portfolio:/var/www/html/
+      - portfolio:/var/www/html/
       
 ########### container dependent container to Database ################
 #    depends_on:
-#        - container_name
+#        - database
 ######################################################################      
   
