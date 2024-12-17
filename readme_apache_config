@@ -1,0 +1,85 @@
+# first domain name create in a apache2
+
+##################################################################################################
+#edit in 
+
+vim /etc/apache2/sites-available/000-default.conf
+##########################################################################
+<VirtualHost *:80>
+
+ <Directory /var/www/html/resume> # your content path
+    Options Indexes FollowSymLinks MultiViews
+    AllowOverride All
+    Order allow,deny
+    allow from all
+  </Directory>
+
+
+  ServerAdmin   abhishek1997sh@gmail.com     # your mail id
+  ServerName    byteportfolio.in              # your domain name
+  DocumentRoot  /var/www/html/resume          # your directory path
+  ErrorLog      ${APACHE_LOG_DIR}/resume_error.log    
+  CustomLog     ${APACHE_LOG_DIR}/resume_access.log combined
+
+
+
+</VirtualHost>
+
+
+#######################################################################################################
+
+
+########################################################################################################
+# crate a new file with new name like :- "study.conf"
+
+vim /etc/apache2/sites-available/study.conf
+
+#####################################################################
+
+<VirtualHost *:80>
+
+ <Directory /var/www/html/study>
+    Options Indexes FollowSymLinks MultiViews
+    AllowOverride All
+    Order allow,deny
+    allow from all
+  </Directory>
+
+
+  ServerAdmin   abhishek1997sh@gmail.com
+  ServerName    study.byteportfolio.in      # subdomain name
+  DocumentRoot  /var/www/html/study
+  ErrorLog      ${APACHE_LOG_DIR}/study_error.log
+  CustomLog     ${APACHE_LOG_DIR}/study_access.log combined
+
+
+
+</VirtualHost>
+
+#########################################################################################################
+
+
+
+
+#if we will create any new ".conf" file in this path  ----> /etc/apache2/sites-available/
+
+must run this command in your apache machine
+
+----------------->>>>>>>> a2ensite study.conf    <<<<<<<<------------------------
+
+
+#a2ensite <newfilename.conf>
+---------------------------------------------------------------------------------
+
+And then reload apache server
+
+service apache2 reload   <<<<<<<<<<------------------------
+####################################################################################################
+
+
+
+
+
+
+
+
