@@ -3,14 +3,22 @@ pipeline {
 
 
     stages {
-          stage('Code') {
-              steps {
-                  echo 'Git file clone'
-                  sh "pwd > /tmp/testout"
-                  git branch: 'main', credentialsId: 'github_passwd', url: 'https://github.com/abhishek021997/portfolio.git'
+        stage('Code') {
+            steps {
                  
-              }
+                git branch: 'main', credentialsId: 'github_passwd', url: 'https://github.com/abhishek021997/portfolio.git'
+                 
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                 sh "sh copy_data.sh"
+               
+                 
+            }
           }
+
 
     }
 }
